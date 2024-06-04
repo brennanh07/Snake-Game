@@ -48,4 +48,16 @@ class Snake:
         else:
             self.head.setheading(0)
 
+    def snake_location(self):
+        position = [round(self.head.xcor()), round(self.head.ycor())]
+        return position
+
+    def add_segment(self):
+        snake_segment = Turtle("square")
+        snake_segment.color("white")
+        snake_segment.penup()
+        snake_segment.goto(self.snake_segments[-1].pos())
+        self.snake_segments.append(snake_segment)
+
+
 
