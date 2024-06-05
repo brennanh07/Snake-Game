@@ -12,7 +12,7 @@ screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
 
-scoreboard = Scoreboard(score)
+scoreboard = Scoreboard()
 
 food = Food()
 
@@ -38,8 +38,10 @@ while play_game:
         food.food_spawn()
         snake.add_segment()
         score += 1
-        scoreboard.clear()
         scoreboard.update(score)
+
+    if snake.hit_wall() or snake.hit_self():
+        play_game = False
 
 
 
