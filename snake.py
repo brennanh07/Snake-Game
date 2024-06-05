@@ -66,12 +66,17 @@ class Snake:
             return True
 
     def hit_self(self):
-        head_position = [round(self.head.xcor()), round(self.head.ycor())]
-        for x in range(1, len(self.snake_segments)):
-            body_position = [round(self.snake_segments[x].xcor()), round(self.snake_segments[x].ycor())]
-            print(body_position)
-            print(head_position)
-            return body_position[0] == head_position[0] and body_position[1] == head_position[1]
+        for segment in self.snake_segments:
+            if segment == self.head:
+                pass
+            else:
+                if self.head.distance(segment) < 10:
+                    return True
+
+
+
+
+
 
 
 

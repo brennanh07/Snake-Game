@@ -40,8 +40,15 @@ while play_game:
         score += 1
         scoreboard.update(score)
 
-    if snake.hit_wall() or snake.hit_self():
+    if snake.hit_self():
         play_game = False
+
+
+
+
+
+
+
 
 
 
