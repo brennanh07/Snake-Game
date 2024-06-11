@@ -66,12 +66,20 @@ class Snake:
             return True
 
     def hit_self(self):
+        for segment in self.snake_segments[1:]:
+            if self.head.distance(segment) < 10:
+                return True
+
+    def reset(self):
         for segment in self.snake_segments:
-            if segment == self.head:
-                pass
-            else:
-                if self.head.distance(segment) < 10:
-                    return True
+            segment.goto(x=10000, y=10000)
+
+        self.snake_segments.clear()
+        self.create_snake()
+        self.head = self.snake_segments[0]
+
+
+
 
 
 

@@ -8,7 +8,7 @@ class Food(Turtle):
         super().__init__()
         self.shape("circle")
         self.penup()
-        self.color("white")
+        self.color("red")
 
     def food_spawn(self):
         coordinates = []
